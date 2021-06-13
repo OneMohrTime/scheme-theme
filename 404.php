@@ -10,4 +10,4 @@
  */
 
 $context = Timber::context();
-Timber::render( '404.twig', $context );
+Timber::render( '_layouts/404.twig', $context );
