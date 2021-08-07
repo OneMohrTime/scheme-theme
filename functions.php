@@ -6,23 +6,25 @@ function highstarter_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
+	// Add custom WP Admin field styles
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'editor-style.css' );
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(
 		array(
-			'top'    => __( 'Top Menu', 'highstarter' ),
-			'social' => __( 'Social Links Menu', 'highstarter' ),
+			'main-nav'       => __( 'The Main Menu', 'highstarter' ),  // Main nav in header
+			'featured-pages' => __( 'Featured Pages', 'highstarter' ), // Featured pages used on some templates
+			'footer-links'   => __( 'Footer Links', 'highstarter' )    // Secondary nav in footer
 		)
 	);
 
-	/*
+	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support(
 		'html5',
 		array(
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 			'search-form'
@@ -48,6 +50,19 @@ add_action( 'after_setup_theme', 'highstarter_setup' );
 
 if ( isset( $content_width ) ) {
 	$highstarter_content_width = 900;
+}
+
+// Add Advanced Custom Fields support, options
+
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+	if( function_exists('acf_add_local_field_group') ):
+		include_once('inc/acf.php');
+	endif;
+
+	if( function_exists('acf_add_options_page') ) {
+		include_once('inc/acf-options.php');
+	}
 }
 
 // Register widget area.
@@ -148,55 +163,6 @@ function highstarter_filter_menu_item_classes( $css_class ) {
 
 add_filter( 'page_css_class', 'highstarter_filter_menu_item_classes', 10, 5 );
 
-/* Modify comments markup*/
-
-function highstarter_modify_comment_output( $comment, $depth, $args ) {
-	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li'; ?>
-<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>"
-	<?php comment_class( empty( $args['has_children'] ) ? '' : 'parent', $comment ); ?>>
-
-	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-		<footer class="comment-meta">
-			<div class="comment-author vcard">
-				<?php
-				if ( 0 != $args['avatar_size'] ) {
-					echo get_avatar( $comment, $args['avatar_size'] );
-				}
-				?>
-				<?php
-				/* translators: %s: comment author link */
-				printf(
-					__( '%s <span class="says">says:</span>', 'highstarter' ),
-					sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
-				);
-				?>
-			</div><!-- .comment-author -->
-			<div class="comment-metadata">
-				<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-					<time datetime="<?php comment_time( 'c' ); ?>">
-						<?php
-						printf( _x( '%s ago', '%s = human-readable time difference', 'highstarter' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) );
-						?>
-					</time>
-				</a>
-				<?php edit_comment_link( __( 'edit', 'highstarter' ), '<span class="edit-link">', '</span>' ); ?>
-			</div><!-- .comment-metadata -->
-
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-			<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'highstarter' ); ?>
-			</p>
-			<?php endif; ?>
-		</footer><!-- .comment-meta -->
-		<div class="comment-content">
-			<?php comment_text(); ?>
-		</div><!-- .comment-content -->
-	</article><!-- .comment-body -->
-
-	<?php
-}
-
-wp_list_comments( 'callback=highstarter_modify_comment_output' );
-
 // IMPLEMENT SIMPLE PAGINATION
 
 function highstarter_numeric_posts_nav() {
@@ -260,12 +226,6 @@ function highstarter_post_meta_header() {
 	 <?php endif; ?>
 
 	<span class="posted-author"><?php the_author_posts_link(); ?></span>
-
-	<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-	<span class="comments-number">
-		<?php comments_popup_link( esc_html__( 'Leave a comment', 'highstarter' ), esc_html__( '1 Comment', 'highstarter' ), /* translators: number of comments */esc_html__( '% Comments', 'highstarter' ), 'comments-link' ); ?>
-	</span>
-	<?php endif; ?>
 
 	<?php
 }
@@ -355,10 +315,10 @@ function highstarter_call_to_action() {
 
 		if ( $banner_label && $banner_link ) :
 			?>
-	
+
 		<p>
-			<a class="button" 
-				href="<?php echo esc_url( $banner_link ); ?>" 
+			<a class="button"
+				href="<?php echo esc_url( $banner_link ); ?>"
 				aria-label="<?php printf( /* translators: continue reading */ esc_attr__( 'Continue Reading', 'highstarter' ) ); ?>">
 					<?php printf( /* translators: right arrow (LTR) / left arrow (RTL) */ esc_html( $banner_label ) . ' ' . '%s', is_rtl() ? '&larr;' : '&rarr;' ); ?>
 			</a>
@@ -387,7 +347,7 @@ function highstarter_dark_mode() {
 	?>
 		<script>
 			if (localStorage.getItem('highstarterNightMode')) {
-				document.body.className +=' dark-mode';
+				document.body.className +=' -dark-mode';
 			}
 		</script>
 	<?php
@@ -420,3 +380,29 @@ function highstarter_body_classes( $classes ){
 	return $classes;
 }
 add_filter( 'body_class', 'highstarter_body_classes' );
+
+/*********************************************************
+ * Custom WP Functions by @onemohrtime
+ *********************************************************/
+
+/**
+ * Override elaborate WP body classes
+ */
+
+add_filter('body_class','my_class_names');
+function my_class_names($classes) {
+	global $post;
+	global $wp_query;
+
+	$arr = array();
+
+	if(is_page() || is_single()) {
+		$post_type = apply_filters( 'post_type', $post->post_type );
+		$post_name = apply_filters( 'post_slug', $post->post_name );
+		$post_id   = apply_filters( 'post_id', $post->ID );
+		// $page_id = $wp_query->get_queried_object_id();
+		$arr[] = 't-' . $post_type . ' t-' . $post_name . ' id-' . $post_id;
+	}
+
+	return $arr;
+}

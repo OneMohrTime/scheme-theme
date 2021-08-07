@@ -3,7 +3,7 @@
  * Template part for displaying the primary navigation menu.
  *
  * @package Highstarter
- * 
+ *
  * @since 1.0
  * @version 1.0
  * @copyright  Copyright (c) 2020, Atanas Yonkov
@@ -12,22 +12,25 @@
 
 ?>
 
-<!--Toggle menu on mobile-->
-<button class="menu-toggle" id="menu-toggle" role="button" tabindex="0">
-    <div></div>
-    <div></div>
-    <div></div>
-</button>
+<div class="c-navigation -primary">
 
-<nav id="site-navigation" class="main-navigation">
+	<button class="c-navigation__toggle" id="menu-toggle" role="button" tabindex="0">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
 
-<?php // Insert menu items through WP admin
-    wp_nav_menu(
-        array(
-            'theme_location' => 'top',
-            'menu_class' => 'menu-primary-container',
-            'container_class' => 'menu-primary-container',
-        )
-    );
-?>
-</nav><!-- .menu-1 -->
+	<nav class="c-navigation__menu" id="site-navigation">
+
+	<?php // Insert menu items through WP admin
+		wp_nav_menu(
+			array(
+				'theme_location' => 'main-nav',
+				'menu_class' => 'c-menu',
+				'container' => '',
+			)
+		);
+	?>
+	</nav>
+
+</div>
