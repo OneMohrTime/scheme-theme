@@ -1,0 +1,23 @@
+{
+  "name": "pyramid-scheme-bar-website",
+  "version": "1.0.0",
+  "description": "Packages for pyramidschemebar.com",
+  "main": "index.php",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneMohrTime/scheme-theme.git"
+  },
+  "author": {
+    "name": "Derek Mohr",
+    "email": "derek@onemohrti.me",
+    "url": "https://onemohrti.me"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OneMohrTime/scheme-theme/issues"
+  },
+  "homepage": "https://github.com/OneMohrTime/scheme-theme#readme"
+}
