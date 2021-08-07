@@ -1,13 +1,13 @@
 /*
-Theme Name: Highstarter
-Theme URI: https://github.com/yonkov/highstarter/
-Author: Atanas Yonkov
-Author URI: http://yonkov.github.io/
-Description: Highstarter is a lightweight starter theme without any libraries or frameworks, developed by Atanas Yonkov in 2020. The theme is very fast, simple, and easy to adapt to any design. This tiny WordPress theme (only 33KB zip file excluding the header image and the screenshot) uses core WordPress functions, custom css and vanilla js to provide high performance and the best possible user experience. It has extensive documentation and a lot of options in the theme customizer, which makes it accessible not only to WordPress developers but also to people with little or no coding experience at all. Option to pick between right sidebar, left sidebar or full-width layout. The visitors can choose between light and dark (night) mode and change their preferences with one click. Option to use a static Homepage. Option to add custom header image, custom header call to action button, custom site icon and change theme accent colors from the theme customizer. The theme also offers a lot of options to customize the header image. Add parallax, image overlay or change the height of the header image with a single click. The theme supports nested dropdown sub menus, pagination and even breadcrumbs out of the box. Fully compatible with Gutenberg but also supports the good old Classic editor. How to set it up: https://github.com/yonkov/highstarter/#readme
+Theme Name: Scheme Theme
+Theme URI: https://github.com/OneMohrTime/scheme-theme
+Author: Derek Mohr
+Author URI: http://onemohrti.me/
+Description: Wordpress theme for The Pyramid Scheme Bar in Grand Rapids, MI.
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.8
 Requires PHP: 5.2.4
-Version: 2.1.6
+Version: 3.0.0
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,8 +21,8 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Use it to make something cool, have fun, 
-and share what you've learned with others. 
+Use it to make something cool, have fun,
+and share what you've learned with others.
 */
 
 .aligncenter, div.aligncenter {
@@ -92,7 +92,8 @@ a img.aligncenter {
   padding: 0 4px 5px
 }
 
-.screen-reader-text {
+.screen-reader-text,
+.u-hidden {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -404,8 +405,8 @@ label {
 
 /* Dark mode styles */
 
-body.dark-mode header, 
-body.dark-mode main *, 
+body.dark-mode header,
+body.dark-mode main *,
 body.dark-mode main .hentry, body.dark-mode main .sidebar-box {
   background-color: #262626
 }
@@ -474,8 +475,8 @@ body.dark-mode .main-navigation .sub-menu .menu-item-has-children > a::after {
 
 /* Headings */
 
-.dark-mode h1, 
-.dark-mode h2, 
+.dark-mode h1,
+.dark-mode h2,
 .dark-mode h3 {
   color: #fff
 }
@@ -486,10 +487,10 @@ body.dark-mode .main-navigation .sub-menu .menu-item-has-children > a::after {
   color: #fff
 }
 
-.dark-mode button, 
-.dark-mode input, 
-.dark-mode optgroup, 
-.dark-mode select, 
+.dark-mode button,
+.dark-mode input,
+.dark-mode optgroup,
+.dark-mode select,
 .dark-mode textarea {
   color: #fff
 }
@@ -497,7 +498,7 @@ body.dark-mode .main-navigation .sub-menu .menu-item-has-children > a::after {
 /* Links */
 
 .dark-mode a,
-.dark-mode a:focus, 
+.dark-mode a:focus,
 .dark-mode a:active {
   color: #fff
 }
@@ -1016,7 +1017,7 @@ pre{
     width: 100%
   }
 
-  article, aside, details, figcaption, figure, footer, 
+  article, aside, details, figcaption, figure, footer,
   header, main, menu, nav, section, summary {
     display: block
   }
@@ -1677,7 +1678,7 @@ section[id*="recent-comments"] li {
   border: 1px solid rgba(0,0,0,0.1);
   margin-right: 2px;
   margin-bottom: 5px;
-  font-size: .888em; 
+  font-size: .888em;
   letter-spacing: 8px;
   vertical-align: middle
 }
