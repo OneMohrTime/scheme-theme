@@ -1,0 +1,20 @@
+// =============================================================================
+// Animations: Scroll Elements
+// =============================================================================
+// This file contains the default animations for scroll elements deployed via
+// the Mighty Scroll javascript module.
+
+// Scroll container module
+// =============================================================================
+// Targets scroll container by 'data-scroll' attribute
+[data-scroll] {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: ($speed-hover * 1.5) $easing;
+
+    // Is in view
+    &.-is-inview {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

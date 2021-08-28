@@ -1,0 +1,96 @@
+/*!
+Theme Name: Scheme Theme
+Theme URI: https://github.com/OneMohrTime/scheme-theme
+Author: Derek Mohr
+Author URI: http://onemohrti.me/
+Description: Wordpress theme for The Pyramid Scheme Bar in Grand Rapids, MI.
+Requires at least: WordPress 4.4
+Tested up to: WordPress 5.8
+Requires PHP: 5.2.4
+Version: 3.0.0
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Tags: portfolio, blog, one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, custom-colors, custom-logo, featured-images, rtl-language-support, footer-widgets, theme-options, threaded-comments, translation-ready
+Text Domain: highstarter
+
+This theme, like WordPress, is licensed under the GPL.
+It is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Use it to make something cool, have fun,
+and share what you've learned with others.
+*/
+//
+// ! Settings, Tools, Generic, and Elements all are ordered in a specific way.
+// ! Vendors, Objects, Components, and Templates should be ordered alphabetically,
+// ! so it's easier to add/remove them as the site grows.
+
+// Dart Sass Transitions
+// =============================================================================
+@use "sass:math";
+@use "sass:list";
+
+// Settings
+// =============================================================================
+@import "settings/config";
+@import "../../node_modules/include-media/dist/_include-media";
+@import "settings/config.colors";
+@import "settings/config.type";
+
+// Tools
+// =============================================================================
+@import "tools/functions";
+@import "tools/mixins";
+// @import "tools/fonts";
+// @import "tools/layout";
+// @import "tools/widths";
+@import "tools/family";
+
+// Generic
+// =============================================================================
+@import "node_modules/normalize.css/normalize";
+@import "generic/generic";
+@import "generic/media";
+@import "generic/form";
+@import "generic/button";
+
+// Elements
+// =============================================================================
+@import "elements/webfonts";
+@import "elements/typography";
+@import "elements/page";
+
+// Vendors
+// =============================================================================
+// @import "vendors/example";
+
+// Objects
+// =============================================================================
+@import "objects/container";
+@import "objects/page-builder";
+@import "objects/page-transitions";
+@import "objects/ratio";
+@import "objects/scroll-elements";
+
+// Components
+// =============================================================================
+@import "components/redactor";
+
+// Templates
+// =============================================================================
+@import "templates/home";
+
+// Utilities
+// =============================================================================
+// @import "utilities/align";
+// @import "utilities/helpers";
+// @import "utilities/padding";
+// @import "utilities/print";
+// @import "utilities/ratio";
+// @import "utilities/spacing";
+// @import "utilities/states";
+// @import "utilities/widths";

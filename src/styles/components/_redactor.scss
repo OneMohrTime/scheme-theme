@@ -1,0 +1,80 @@
+// =============================================================================
+// Components: Redactor
+// =============================================================================
+// This file styles the elements inside of a Redactor field
+
+// Component Frame
+// =============================================================================
+
+.c-redactor {
+    position: relative;
+    width: 100%;
+}
+
+// Component Modifiers
+// =============================================================================
+
+// .c-redactor--large {
+// }
+
+// Component Elements
+// =============================================================================
+.c-redactor {
+
+    // All headings
+    // =========================================================================
+    @for $i from 2 through 6 {
+        h#{$i} {
+            margin-top: 1.25em;
+            margin-bottom: 0.75em;
+        }
+    }
+
+    // Headlines
+    // =========================================================================
+    h2 {}
+
+    // Subheadlines
+    // =========================================================================
+    h3 {}
+    h4 {}
+
+    // Ordered & unordered lists
+    // =========================================================================
+    ul, ol {
+        display: block;
+        padding-left: 1em;
+        margin-bottom: $line-height;
+        // space list items a bit
+        li {
+            display: list-item;
+            list-style-type: disc;
+            margin-bottom: math.div($line-height, 2);
+        }
+    }
+    ul {
+        // custom <li> dots
+        li::marker {}
+    }
+    ol {
+        list-style-type: decimal;
+    }
+
+    figure {
+        margin-bottom: $line-height
+    }
+
+    // Links
+    // =========================================================================
+    a {
+        @include u-inline-link();
+    }
+
+    // Typogrify classes
+    // =========================================================================
+
+    // set all caps to just slightly smaller
+    .caps {
+        font-size: 0.95em;
+    }
+}

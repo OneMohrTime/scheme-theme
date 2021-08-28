@@ -1,0 +1,23 @@
+// =============================================================================
+// Objects: Page builder
+// =============================================================================
+// This file contains the page builder object properties
+
+// Object class
+// =============================================================================
+
+.o-page-builder {
+
+    // Remove top margin from first child
+    section:first-child div {
+        padding-top: 0;
+    }
+
+    // Remove bottom margin from last child
+    section:last-child div {
+        padding-bottom: 0;
+    }
+}
+
+// Content
+// =============================================================================
