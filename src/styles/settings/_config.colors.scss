@@ -6,24 +6,21 @@
 // Palette
 // =============================================================================
 
-$yellow:      #f7bf00;
-$red:         #ff582e;
-$green:       #134b32;
-$blue:        #1f229c;
-$pink:        #e8b5d0;
-$light-gray:  #ccc;
-$medium-gray: #626262;
-$dark-gray:   #434343;
-$light:       #f1f1f1;
-$dark:        #1d1d1d;
-$white:       #fff;
-$black:       #000;
+$purple:       #0d0221;
+$light-purple: #241734;
+$teal:         #2de2e6;
+$light-teal:   #f3ffff;
+$blue:         #023788;
+$pink:         #d40078;
+$light-pink:   #fff3fa;
+$gray:         #dce5e5;
+$light:        $light-teal;
+$dark:         $purple;
+$white:        #fff;
+$black:        #000;
 
 // Defaults
 // =============================================================================
-
-// Link
-$link-color: $blue;
 
 // Selection
 $selection-text:       $white;
