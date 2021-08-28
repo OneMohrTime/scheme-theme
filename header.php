@@ -29,16 +29,19 @@
 
 		<header id="header" class="o-site__header">
 
-			<a class="c-skip-link" href="#content"><?php _e( 'Skip to content', 'highstarter'); ?></a>
+			<a class="c-skip-link" href="#a11y"><?php _e( 'Open Skip Nav', 'highstarter'); ?></a>
+
+			<div class="c-skip-nav" id="a11y">
+				<a class="c-skip-link" href="#content"><?php _e( 'Skip to content', 'highstarter'); ?></a>
+				<a class="c-skip-link" href="#footer"><?php _e( 'Skip to footer', 'highstarter'); ?></a>
+			</div>
 
 			<button class="c-button -toggle" id="menu_toggle" type="button">
 				<span class="menu-grid open"></span>
 			</button>
 
 			<figure id="logo" class="c-logo -branding">
-				<a href="{{ site.link }}" class="c-logo__link">
-					<?php highstarter_the_custom_logo(); ?>
-				</a>
+				<?php highstarter_the_custom_logo(); ?>
 			</figure>
 
 			<?php get_template_part('template-parts/header/navigation');?>
