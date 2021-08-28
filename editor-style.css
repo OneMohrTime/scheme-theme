@@ -1,0 +1,51 @@
+.editor-styles-wrapper {
+	color: #212121;
+	font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-family: "Poppins", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-weight: 700;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol,
+.editor-styles-wrapper p {
+	margin-bottom: .75em;
+	widows: 3;
+	orphans: 3;
+	hyphens: auto;
+}
+
+.editor-styles-wrapper p:last-child,
+.editor-styles-wrapper p:only-child { margin-bottom: 0; }
+
+.editor-styles-wrapper b, strong { font-weight: 700; }
+
+.editor-styles-wrapper i, em { font-style: italic; }
+
+.editor-styles-wrapper a {
+	color: #1565c0;
+	text-decoration-skip: ink;
+}
+
+.editor-styles-wrapper .btn,
+.editor-styles-wrapper .button {
+	background-color: #6ecff2;
+	font-weight: 700;
+}
+
+.editor-styles-wrapper hr {
+	border-bottom: 1px solid #ddd;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	margin: 1.5em 0;
+}
