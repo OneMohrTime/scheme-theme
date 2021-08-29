@@ -110,12 +110,13 @@ add_action( 'widgets_init', 'highstarter_widgets_init' );
  * Enqueue scripts and styles.
  */
 function highstarter_styles() {
-	 // Theme Navigation
+	// Theme Navigation
 	wp_enqueue_script( 'highstarter-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '', true );
 	// Toggle Dark Theme Mode
 	wp_enqueue_script( 'highstarter-dark-mode', get_template_directory_uri() . '/assets/js/toggleDarkMode.js', array(), '', true );
 	// Theme stylesheet.
-	wp_enqueue_style( 'highstarter-style', get_template_directory_uri() . '/style.css', '', '2.1.6' );
+	wp_enqueue_style( 'highstarter-style', get_template_directory_uri() . '/assets/css/main.css', '', null );
+	// wp_enqueue_style( 'highstarter-style', get_template_directory_uri() . '/style.css', '', '2.1.6' );
 }
 
 add_action( 'wp_enqueue_scripts', 'highstarter_styles', 99 );

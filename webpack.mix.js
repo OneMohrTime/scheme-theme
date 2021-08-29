@@ -22,7 +22,7 @@ mix.setPublicPath('assets') // generate manifest in this directory
   // ])
 
   // SCSS to CSS
-  .sass('src/styles/app.scss', 'assets/styles/main.css')
+  .sass('src/styles/app.scss', 'assets/css/main.css')
   // .sourceMaps();
 
   // Process images + media

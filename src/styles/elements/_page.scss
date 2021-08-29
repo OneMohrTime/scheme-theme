@@ -16,7 +16,6 @@
 
 html {
 	min-height: 100%; /* [3] */
-	overflow: hidden;
 	font-family: $font-family;
 	font-size: $font-size; /* [1] */
 	font-weight: $font-light;
@@ -32,24 +31,6 @@ html {
 		overflow-y: scroll; /* [2] */
 	}
 
-	// Has smooth scroll
-	&.-has-scroll-smooth {
-		overflow: hidden;
-	}
-
-	// Scroll is being dragged
-	&.-has-scroll-dragging {
-		user-select: none;
-	}
-
-	// Has menu open
-	&.-has-menu-open {
-		// To medium
-		@include media('<medium') {
-			overflow: hidden;
-		}
-	}
-
 	// Fix web fonts in Chrome, Safari, Firefox
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -61,20 +42,13 @@ html {
 
 body {
 	position: relative;
-	background-color: $white;
-	color: $black;
+	background-color: $light;
+	color: $dark;
 
-	// Hide overflow when smooth scrolling is enabled
-	.-has-scroll-smooth & {
-		overflow: hidden;
-	}
-
-	// Has menu open
-	&.-has-menu-open {
-		// To medium
-		@include media('<medium') {
-			overflow: hidden;
-		}
+	// dark mode
+	&.dark-mode {
+		background-color: $dark;
+		color: $light;
 	}
 }
 
