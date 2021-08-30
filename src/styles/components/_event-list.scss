@@ -1,0 +1,47 @@
+// =============================================================================
+// Components: Event List
+// =============================================================================
+// This file styles upcoming events as a list
+
+// Component Frame
+// =============================================================================
+
+.c-event-list {
+	padding-left: $gutter-xs;
+	padding-right: $gutter-xs;
+}
+
+// Component Modifiers
+// =============================================================================
+
+// .c-event-list--wide {
+// }
+
+// .c-event-list--narrow {
+// }
+
+// Component Elements
+// =============================================================================
+
+.c-event-list__item {
+	background-color: $light;
+	color: $dark;
+
+	// dark mode
+	.-dark-mode & {
+		background-color: $dark;
+		color: $light;
+	}
+
+	// Zebra striping
+	@include even() {
+		background-color: $gray;
+		color: $dark;
+
+		// dark mode
+		.-dark-mode & {
+			background-color: $light-purple;
+			color: $light;
+		}
+	}
+}

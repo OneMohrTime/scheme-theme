@@ -102,7 +102,7 @@ add_action( 'customize_register', 'highstarter_customize_colors' );
 function highstarter_customize_colors_css() {
 	$header_text_color = get_theme_mod( 'header_textcolor' ); ?>
 
-<style type="text/css">
+<!--<style type="text/css">
 body h1,
 body h2,
 body h3 {
@@ -129,7 +129,7 @@ input[type="reset"],
 input[type="submit"] {
 	background-color: <?php echo esc_attr( get_theme_mod( 'button_color', '#ff6663' ) ); ?> !important;
 }
-</style>
+</style>-->
 
 	<?php
 }
@@ -383,7 +383,7 @@ function highstarter_customize_css() {
 </style>
 
 	<?php elseif ( $layout == 'three' ) : ?>
-	
+
 <style type="text/css">
 	.blog-entries {
 		flex-direction: row-reverse;
@@ -392,16 +392,16 @@ function highstarter_customize_css() {
 	@media (min-width: 60em){
 		.sidebar-wrapper, .dark-mode .sidebar-box {
 			padding-left: 0;
-		}	
+		}
 	}
 	<?php else : ?>
 	@media (min-width: 60em){
 		.sidebar-wrapper, .dark-mode .sidebar-box {
 			padding-right: 0;
 		}
-	}   
+	}
 	<?php endif; ?>
-</style>  
+</style>
 
 		<?php
 	endif;
@@ -471,7 +471,7 @@ function highstarter_customize_night_mode_css() {
 	?>
 
 <style type="text/css">
-body.dark-mode header, body.dark-mode main *, 
+body.dark-mode header, body.dark-mode main *,
 body.dark-mode main .hentry, body.dark-mode main .sidebar-box,
 body.dark-mode .site-header-wrapper,
 body.dark-mode .main-navigation ul,

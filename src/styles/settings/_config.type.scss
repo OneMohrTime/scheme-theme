@@ -6,12 +6,12 @@
 // Font stacks: https://css-tricks.com/snippets/css/font-stacks/
 // =============================================================================
 
-$font-body: sans-serif;
-$font-heading: serif;
+$font-body: "Spartan", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-heading: $font-body;
 
 // Defaults
 // =============================================================================
-$font-size:           16px;
+$font-size:           18px;
 $font-color:          $black;
 $line-height-body:    1.5em;
 $line-height-heading: 1.2em;
@@ -20,20 +20,12 @@ $line-height-heading: 1.2em;
 // =============================================================================
 
 // Headings
-$font-h1: 36px;
+$font-h1: 60px;
 $font-h2: 30px;
 $font-h3: 24px;
-$font-h4: 18px;
+$font-h4: 21px;
 $font-h5: 14px;
-$font-h6: 12px;
-
-// Mobile headings
-$mobile-h1: 36px;
-$mobile-h2: 30px;
-$mobile-h3: 24px;
-$mobile-h4: 18px;
-$mobile-h5: 14px;
-$mobile-h6: 12px;
+$font-h6: 11px;
 
 // Weights
 $font-hairline: 100;

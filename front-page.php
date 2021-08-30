@@ -16,6 +16,10 @@ get_header(); ?>
 
 <div class="o-main__home" id="content">
 
+	<figure class="o-main__logo -mobile-only">
+		<?php highstarter_the_custom_logo(); ?>
+	</figure>
+
 	<h1 class="c-title">The Pyramid Scheme <span class="c-title--small">in Grand Rapids, MI</span></h1>
 
 	<section class="c-featured">
@@ -100,10 +104,10 @@ get_header(); ?>
 		wp_reset_postdata(); ?>
 	</ul>
 
-	<nav class="c-featured-nav -button-group">
-		<a href="/events" class="c-button -wide">See All Upcoming Shows</a>
-		<a href="/photos" class="c-button">Past Shows</a>
-		<a href="/faq" class="c-button">Event FAQ</a>
+	<nav class="c-button-group">
+		<a href="/events" class="c-button -primary -wide">See All Upcoming Shows</a>
+		<a href="/photos" class="c-button -default">Past Shows</a>
+		<a href="/faq" class="c-button -default">Event FAQ</a>
 	</nav>
 
 	<?php // Insert menu items through WP admin

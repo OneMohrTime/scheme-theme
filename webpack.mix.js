@@ -15,7 +15,7 @@ const mix = require('laravel-mix');
 mix.setPublicPath('assets') // generate manifest in this directory
 
   // JavaScript ES6
-  .js('src/scripts/app.js', 'assets/scripts/main.js')
+  .js('src/scripts/app.js', 'assets/js/main.js')
   // .extract([
   //   'fancybox',
   //   'jquery',
@@ -39,14 +39,12 @@ mix.setPublicPath('assets') // generate manifest in this directory
     //   '{*,**/*}.twig'
     // ],
     files: [
-      'assets/scripts/*.js',
       'src/scripts/*.js',
       'src/scripts/**/*.js',
-      'assets/styles/*.css',
       'src/styles/*.scss',
       'src/styles/**/*.scss',
-      'templates/*.twig',
-      'templates/**/*.twig'
+      'template-parts/*.php',
+      'template-parts/**/*.php'
     ]
   })
 

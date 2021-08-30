@@ -15,19 +15,26 @@
 ?>
 <!DOCTYPE html>
 
-<html <?php language_attributes();?>>
+<html <?php language_attributes();?> class="-no-js -is-loading">
 <head>
-	<meta charset="<?php bloginfo('charset');?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo('charset');?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+	<?php // TODO: move to funtions.php ?>
+	<!-- Webfonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet" />
+
 	<?php wp_head();?>
 </head>
 
 <body <?php body_class();?>>
 <?php wp_body_open(); ?>
-	<div id="container" class="o-site -<?php if (is_single()): ?>single<?php else : ?>default<?php endif; ?>">
+	<div id="container" class="o-container -<?php if (is_single()): ?>single<?php else : ?>default<?php endif; ?>">
 
-		<header id="header" class="o-site__header">
+		<header id="header" class="o-header">
 
 			<a class="c-skip-link" href="#a11y"><?php _e( 'Open Skip Nav', 'highstarter'); ?></a>
 

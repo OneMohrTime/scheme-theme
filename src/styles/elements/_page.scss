@@ -16,20 +16,21 @@
 
 html {
 	min-height: 100%; /* [3] */
+	// overflow: hidden;
 	font-family: $font-family;
 	font-size: $font-size; /* [1] */
 	font-weight: $font-light;
 	line-height: $line-height; /* [1] */
 	color: $font-color;
 
-	// Is loading
-	&.-is-loading {
-		cursor: wait;
-	}
+	// // Is loading
+	// &.-is-loading {
+	// 	cursor: wait;
+	// }
 
-	&.-is-ready {
-		overflow-y: scroll; /* [2] */
-	}
+	// &.-is-ready {
+	// 	overflow-y: scroll; /* [2] */
+	// }
 
 	// Fix web fonts in Chrome, Safari, Firefox
 	-moz-osx-font-smoothing: grayscale;
@@ -46,7 +47,7 @@ body {
 	color: $dark;
 
 	// dark mode
-	&.dark-mode {
+	&.-dark-mode {
 		background-color: $dark;
 		color: $light;
 	}
@@ -69,5 +70,60 @@ a {
 	// Generate hover and focus states
 	@include u-hocus {
 		text-decoration: none;
+	}
+}
+
+// Animations
+// =============================================================================
+
+// Primary buttons, light
+@keyframes u-blue-shadow {
+	0% {
+		box-shadow: 0 0 5px 0 $blue;
+	}
+	50% {
+		box-shadow: 0 0 10px 0 $blue;
+	}
+	100% {
+		box-shadow: 0 0 5px 0 $blue;
+	}
+}
+
+// Primary buttons, dark
+@keyframes u-pink-shadow {
+	0% {
+		box-shadow: 0 0 5px 0 $pink;
+	}
+	50% {
+		box-shadow: 0 0 10px 0 $pink;
+	}
+	100% {
+		box-shadow: 0 0 5px 0 $pink;
+	}
+}
+
+// Default buttons, light
+@keyframes u-black-shadow {
+	0% {
+		box-shadow: 0 0 5px 0 $dark;
+	}
+	50% {
+		box-shadow: 0 0 10px 0 $dark;
+	}
+	100% {
+		box-shadow: 0 0 5px 0 $dark;
+	}
+}
+
+// Default buttons, dark
+@keyframes u-teal-shadow {
+	0% {
+		box-shadow: 0 0 5px 0 $teal;
+	}
+	50% {
+		box-shadow: 0 0 10px 0 $teal;
+	}
+	100% {
+		box-shadow: 0 0 5px 0 $teal;
 	}
 }

@@ -17,10 +17,7 @@
 
 </main>
 
-<footer id="footer" class="o-site__footer" role="contentinfo">
-	<!-- <figure class="site__footer--image">
-		<img src="{{ theme.link }}/assets/images/logo--footer.png" alt="The Pyramid Scheme logo" />
-	</figure> -->
+<footer id="footer" class="o-footer" role="contentinfo">
 	<div class="site__footer--left">
 		<h5>Hours</h5>
 		<?php the_field('hours', 'option'); ?>
@@ -40,7 +37,6 @@
 	</div>
 </footer>
 <?php wp_footer(); ?>
-
 
 </body>
 

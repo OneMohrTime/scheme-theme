@@ -16,8 +16,8 @@
 .o-container {
     position: relative;
 
-    // Is ready
-    .is-ready & {}
+    // DOM loaded
+    .-is-ready & {}
 }
 
 // Content

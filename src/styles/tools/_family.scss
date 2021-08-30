@@ -11,15 +11,15 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin first($num) {
-    @if $num == 1 {
-        &:first-child {
-            @content;
-        }
-    } @else {
-        &:nth-child(-n + #{$num}) {
-            @content;
-        }
-    }
+	@if $num == 1 {
+		&:first-child {
+			@content;
+		}
+	} @else {
+		&:nth-child(-n + #{$num}) {
+			@content;
+		}
+	}
 }
 
 //
@@ -29,9 +29,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin last($num) {
-    &:nth-last-child(-n + #{$num}) {
-        @content;
-    }
+	&:nth-last-child(-n + #{$num}) {
+		@content;
+	}
 }
 
 //
@@ -41,9 +41,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin after-first($num) {
-    &:nth-child(n + #{$num + 1}) {
-        @content;
-    }
+	&:nth-child(n + #{$num + 1}) {
+		@content;
+	}
 }
 
 //
@@ -53,9 +53,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin from-end($num) {
-    &:nth-last-child(#{$num}) {
-        @content;
-    }
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
 }
 
 //
@@ -64,9 +64,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin between($first, $last) {
-    &:nth-child(n + #{$first}):nth-child(-n + #{$last}) {
-        @content;
-    }
+	&:nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
 }
 
 //
@@ -75,9 +75,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin even-between($first, $last) {
-    &:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
-        @content;
-    }
+	&:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
 }
 
 //
@@ -86,9 +86,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin odd-between($first, $last) {
-    &:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
-        @content;
-    }
+	&:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
 }
 
 //
@@ -97,9 +97,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin n-between($num, $first, $last) {
-    &:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
-        @content;
-    }
+	&:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
 }
 
 //
@@ -109,9 +109,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin all-but($num) {
-    &:not(:nth-child(#{$num})) {
-        @content;
-    }
+	&:not(:nth-child(#{$num})) {
+		@content;
+	}
 }
 
 //
@@ -122,9 +122,9 @@
 // @param {number} $num - id of the child
 // @alias every
 @mixin each($num) {
-    &:nth-child(#{$num}n) {
-        @content;
-    }
+	&:nth-child(#{$num}n) {
+		@content;
+	}
 }
 
 //
@@ -134,9 +134,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin every($num) {
-    &:nth-child(#{$num}n) {
-        @content;
-    }
+	&:nth-child(#{$num}n) {
+		@content;
+	}
 }
 
 //
@@ -146,10 +146,10 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin from-first-last($num) {
-    &:nth-child(#{$num}),
-    &:nth-last-child(#{$num}) {
-        @content;
-    }
+	&:nth-child(#{$num}),
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
 }
 
 //
@@ -160,9 +160,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin middle($num) {
-    &:nth-child(#{round($num / 2)}) {
-        @content;
-    }
+	&:nth-child(#{round($num / 2)}) {
+		@content;
+	}
 }
 
 //
@@ -172,9 +172,9 @@
 //          added within the @content directive]
 // @param {number} $num - id of the child
 @mixin all-but-first-last($num) {
-    &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
-        @content;
-    }
+	&:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
+		@content;
+	}
 }
 
 //
@@ -185,9 +185,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin first-of($limit) {
-    &:nth-last-child(#{$limit}):first-child {
-        @content;
-    }
+	&:nth-last-child(#{$limit}):first-child {
+		@content;
+	}
 }
 
 //
@@ -198,9 +198,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin last-of($limit) {
-    &:nth-of-type(#{$limit}):nth-last-of-type(1) {
-        @content;
-    }
+	&:nth-of-type(#{$limit}):nth-last-of-type(1) {
+		@content;
+	}
 }
 
 //
@@ -211,13 +211,13 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin at-least($num) {
-    $selector: &;
-    $child: nth(nth($selector, -1), -1);
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
 
-    &:nth-last-child(n + #{$num}),
-    &:nth-last-child(n + #{$num}) ~ #{$child} {
-        @content;
-    }
+	&:nth-last-child(n + #{$num}),
+	&:nth-last-child(n + #{$num}) ~ #{$child} {
+		@content;
+	}
 }
 
 //
@@ -228,13 +228,13 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin at-most($num) {
-    $selector: &;
-    $child: nth(nth($selector, -1), -1);
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
 
-    &:nth-last-child(-n + #{$num}):first-child,
-    &:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
-        @content;
-    }
+	&:nth-last-child(-n + #{$num}):first-child,
+	&:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
+		@content;
+	}
 }
 
 //
@@ -245,13 +245,13 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin in-between($min, $max) {
-    $selector: &;
-    $child: nth(nth($selector, -1), -1);
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
 
-    &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child,
-    &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child ~ #{$child} {
-        @content;
-    }
+	&:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child,
+	&:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child ~ #{$child} {
+		@content;
+	}
 }
 
 //
@@ -260,9 +260,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 //          added within the @content directive]
 @mixin first-child() {
-    &:first-of-type {
-        @content;
-    }
+	&:first-of-type {
+		@content;
+	}
 }
 
 //
@@ -271,9 +271,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin last-child() {
-    &:last-of-type {
-        @content;
-    }
+	&:last-of-type {
+		@content;
+	}
 }
 
 //
@@ -282,9 +282,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin even() {
-    &:nth-child(even) {
-        @content;
-    }
+	&:nth-child(even) {
+		@content;
+	}
 }
 
 //
@@ -293,9 +293,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin odd() {
-    &:nth-child(odd) {
-        @content;
-    }
+	&:nth-child(odd) {
+		@content;
+	}
 }
 
 //
@@ -304,10 +304,10 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin first-last() {
-    &:first-child,
-    &:last-child {
-        @content;
-    }
+	&:first-child,
+	&:last-child {
+		@content;
+	}
 }
 
 //
@@ -317,9 +317,9 @@
 // added within the @content directive]
 // @alias only
 @mixin unique() {
-    &:only-child {
-        @content;
-    }
+	&:only-child {
+		@content;
+	}
 }
 
 //
@@ -328,9 +328,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin only() {
-    &:only-child {
-        @content;
-    }
+	&:only-child {
+		@content;
+	}
 }
 
 //
@@ -340,9 +340,9 @@
 // @content [Write the style you want to apply to the children, and it will be
 // added within the @content directive]
 @mixin not-unique() {
-    &:not(:only-child) {
-        @content;
-    }
+	&:not(:only-child) {
+		@content;
+	}
 }
 
 //
@@ -355,19 +355,19 @@
 // @param {string} $direction [forward] - Direction of the sort
 // @param {number} $index [0] - Index of the sorting
 @mixin child-index($num, $direction: 'forward', $index: 0) {
-    @for $i from 1 through $num {
-        @if ($direction == 'forward') {
-            &:nth-child(#{$i}) {
-                z-index: order-index($i, $index);
-                @content;
-            }
-        } @else if ($direction == 'backward') {
-            &:nth-last-child(#{$i}) {
-                z-index: order-index($i, $index);
-                @content;
-            }
-        }
-    }
+	@for $i from 1 through $num {
+		@if ($direction == 'forward') {
+			&:nth-child(#{$i}) {
+				z-index: order-index($i, $index);
+				@content;
+			}
+		} @else if ($direction == 'backward') {
+			&:nth-last-child(#{$i}) {
+				z-index: order-index($i, $index);
+				@content;
+			}
+		}
+	}
 }
 
 //
@@ -377,5 +377,5 @@
 // @param {number} $num - Number of children
 // @param {number} $index - Index of the sorting
 @function order-index($i, $index) {
-    @return ($index + $i);
+	@return ($index + $i);
 }
