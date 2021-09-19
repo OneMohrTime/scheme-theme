@@ -38,6 +38,7 @@ and share what you've learned with others.
 // =============================================================================
 @import "settings/config";
 @import "../../node_modules/include-media/dist/_include-media";
+@import "../../node_modules/bourbon/core/bourbon";
 @import "settings/config.colors";
 @import "settings/config.type";
 
@@ -81,9 +82,13 @@ and share what you've learned with others.
 // =============================================================================
 @import "components/buttons";
 @import "components/event-list";
+@import "components/event";
+@import "components/featured-events";
 @import "components/logo";
+@import "components/menu";
 @import "components/navigation";
 @import "components/redactor";
+@import "components/tribe-events";
 
 // Templates
 // =============================================================================

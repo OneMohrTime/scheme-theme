@@ -42,10 +42,10 @@ function init() {
     globals();
     app.init(app);
 
-    html.classList.add('is-loaded');
-    html.classList.add('is-ready');
-    html.classList.remove('is-loading');
-    html.classList.remove('no-js');
-    html.classList.add('has-js');
+    html.classList.add('-is-loaded');
+    html.classList.add('-is-ready');
+    html.classList.remove('-is-loading');
+    html.classList.remove('-no-js');
+    html.classList.add('-has-js');
   }, 300);
 }

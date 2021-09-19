@@ -14,20 +14,26 @@
 	border-radius: 3px;
 	background-color: $dark;
 	color: $light;
-	white-space: normal;
 
 	.-dark-mode & {
 		background-color: $light;
 		color: $dark;
 	}
+
+	// at or above 600px
+	@include media(">=small") {
+		white-space: nowrap;
+	}
+
+	// at or above 900px
+	@include media(">=medium") {
+		font-size: rem($font-size);
+	}
 }
 
 .c-button-group {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	padding-left: $gutter-xs;
-	padding-right: $gutter-xs;
 
 	.c-button {
 		flex-grow: 0;
@@ -51,6 +57,38 @@
 	.-primary {
 		margin-right: auto;
 	}
+
+	// at or above 900px
+	@include media(">=medium") {
+		.-wide {
+			flex-grow: 0;
+			flex-basis: auto;
+		}
+		.-wide + .-default {
+			margin-left: auto;
+		}
+	}
+
+	// below 600px
+	@include media("<small") {
+		flex-wrap: wrap;
+
+		.-default {
+			flex-shrink: 0;
+			flex-basis: 50%;
+			max-width: calc(50% - 10px);
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		// fix margin on mobile sizes
+		.-wide {
+			margin-bottom: 20px;
+			& + .-default {
+				margin-left: 0;
+			}
+		}
+	}
 }
 
 // Component Modifiers
@@ -73,7 +111,7 @@
 
 	.-dark-mode & {
 		background-color: $teal;
-		color: $light;
+		color: $dark;
 		animation: u-teal-shadow 2s infinite;
 	}
 }
@@ -102,9 +140,3 @@
 
 // Component Elements
 // =============================================================================
-
-// .c-event-list__headline {
-// }
-
-// .c-event-list__body {
-// }

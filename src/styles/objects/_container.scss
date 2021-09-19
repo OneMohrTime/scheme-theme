@@ -14,11 +14,38 @@
 // =============================================================================
 
 .o-container {
-    position: relative;
+	position: relative;
 
-    // DOM loaded
-    .-is-ready & {}
+	// DOM loaded
+	.-is-ready & {}
 }
 
 // Content
 // =============================================================================
+
+.o-main {
+	position: relative;
+}
+
+.o-main__logo {
+	display: flex;
+	justify-content: center;
+	margin: 60px auto;
+}
+
+.o-main__header {
+	padding-left: $gutter-xs;
+	padding-right: $gutter-xs;
+
+	.c-title {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+	}
+
+	// at or above 1200px
+	@include media(">=large") {
+		padding-left: $gutter-lg;
+		padding-right: $gutter-lg;
+	}
+}

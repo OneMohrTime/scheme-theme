@@ -90,6 +90,7 @@ ul, ol {
 }
 
 .c-title--small {
+	margin-left: 24px;
 	font-size: $font-h5;
 	@include media(">=small") {
 		font-size: $font-h4;
@@ -108,6 +109,10 @@ ul, ol {
 	@include media(">=small") {
 		font-size: $font-h3;
 	}
+}
+
+.c-link {
+	@include u-inline-link();
 }
 
 // .c-label {

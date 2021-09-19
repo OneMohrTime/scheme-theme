@@ -20,11 +20,16 @@ get_header(); ?>
 		<?php highstarter_the_custom_logo(); ?>
 	</figure>
 
-	<h1 class="c-title">The Pyramid Scheme <span class="c-title--small">in Grand Rapids, MI</span></h1>
+	<header class="o-main__header">
+		<h1 class="c-title">The Pyramid Scheme <span class="c-title--small">in Grand Rapids, MI</span></h1>
+		<span class="c-tag">25 Pinball Machines</span>
+		<span class="c-tag">Cheap drinks</span>
+		<span class="c-tag">Great Jukebox</span>
+	</header>
 
 	<section class="c-featured">
 
-		<h2 class="u-hidden">Featured Events</h2>
+		<h2 class="-is-hidden">Featured Events</h2>
 
 		<?php
 		// Ensure the global $post variable is in scope
@@ -53,7 +58,7 @@ get_header(); ?>
 			// Event Poster
 			echo the_post_thumbnail();
 			echo '<figcaption class="c-featured-event__caption">';
-			echo '<h4 class="c-featured-event__title">' . $post->post_title . '</h4>';
+			echo '<h3 class="c-featured-event__title">' . $post->post_title . '</h3>';
 			echo '<ul class="c-featured-event__list">';
 			// Event Cost
 			echo '<li class="c-featured-event__list--item cost">Costs <span>' . tribe_get_formatted_cost() . '</span></li>';
@@ -70,13 +75,16 @@ get_header(); ?>
 
 		// Reset global post variable. After this point, we are back to the Main Query object
 		wp_reset_postdata(); ?>
+
+		<span class="c-featured__label">Swipe for more events</span>
+
 	</section>
 
 	<div class="c-intro -wysiwyg">
 		<?php the_content(); ?>
 	</div>
 
-	<h2 class="c-headline" data-title="All Upcoming Shows">All Upcoming Shows</h2>
+	<h2 class="c-headline">Upcoming Events</h2>
 
 	<ul class="c-event-list">
 		<?php
@@ -92,15 +100,15 @@ get_header(); ?>
 			setup_postdata( $post );
 
 			echo '<li class="c-event-list__item">';
-			echo '<a href="' . get_permalink($post) . '" class="c-event">';
+			echo '<article class="c-event">';
 			echo '<h3 class="c-event__headline">' . $post->post_title . ' <span>(' . tribe_get_start_date($post, false, 'm/d') . ')</span></h3>';
-			echo '</a>';
 			echo '<div class="c-event__cost">' . tribe_get_cost($post, true) . '</div>';
-			echo tribe_meta_event_tags('Ages:');
-			echo '<a href="' . get_field('ticketweb_event') . '" class="c-event__link" href="' . $post->post_title . '">Tickets</a>';
+			echo tribe_meta_event_tags(' ');
+			echo '<a href="' . get_field('ticketweb_event') . '" class="c-event__tickets" href="' . $post->post_title . '">Buy Tickets</a>';
+			echo '<a href="' . get_permalink($post) . '" class="c-event__link">View Event</a>';
+			echo '</article>';
 			echo '</li>';
 		}
-
 		wp_reset_postdata(); ?>
 	</ul>
 
@@ -114,7 +122,7 @@ get_header(); ?>
 		wp_nav_menu(
 			array(
 				'theme_location' => 'featured-pages',
-				'menu_class' => 'c-menu',
+				'menu_class' => 'c-menu -featured-pages',
 				'container' => '',
 			)
 		);

@@ -9,11 +9,100 @@
 // class which will allow for easy overrides
 .t-home {
 
+	// Header
+	// =========================================================================
+	.o-main__header {
+		margin-bottom: 100px;
+	}
+
+	// Featured Events
+	// =========================================================================
+	.c-featured {
+		margin-bottom: 100px;
+		padding-left: $gutter-xs;
+		padding-right: $gutter-xs;
+
+		// at or above 1200px
+		@include media(">=large") {
+			padding-left: $gutter-lg;
+			padding-right: $gutter-lg;
+		}
+	}
+
 	// Intro
 	// =========================================================================
 	.c-intro {
+		margin-bottom: 100px;
 		padding-left: $gutter-xs;
 		padding-right: $gutter-xs;
+		font-size: rem($font-h4);
+
+		// at or above 1200px
+		@include media(">=large") {
+			padding-left: $gutter-lg;
+			padding-right: $gutter-lg;
+		}
+	}
+
+	// Event List
+	// =========================================================================
+	.o-main__home {
+		& > .c-headline {
+			margin-bottom: 20px;
+			padding-left: $gutter-xs;
+			padding-right: $gutter-xs;
+			font-size: rem($font-h2);
+
+			// at or above 900px
+			@include media(">=medium") {
+				margin-bottom: $gutter-sm;
+				font-size: rem($font-h1);
+			}
+
+			// at or above 1200px
+			@include media(">=large") {
+				padding-left: $gutter-lg;
+				padding-right: $gutter-lg;
+			}
+		}
+	}
+	.c-event-list {
+		padding-left: $gutter-xs;
+		padding-right: $gutter-xs;
+
+		// at or above 1200px
+		@include media(">=large") {
+			padding-left: $gutter-lg;
+			padding-right: $gutter-lg;
+		}
+	}
+
+	// Event Button Group
+	// =========================================================================
+	.c-button-group {
+		margin-bottom: 100px;
+		padding-left: $gutter-xs;
+		padding-right: $gutter-xs;
+
+		// at or above 1200px
+		@include media(">=large") {
+			padding-left: $gutter-lg;
+			padding-right: $gutter-lg;
+		}
+	}
+
+	// Featured Nav
+	// =========================================================================
+	.c-menu {
+		margin-bottom: 100px;
+		padding-left: $gutter-xs;
+		padding-right: $gutter-xs;
+
+		// at or above 1200px
+		@include media(">=large") {
+			padding-left: $gutter-lg;
+			padding-right: $gutter-lg;
+		}
 	}
 
 }

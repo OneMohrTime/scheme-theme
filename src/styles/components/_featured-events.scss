@@ -1,0 +1,75 @@
+// =============================================================================
+// Components: Featured Events
+// =============================================================================
+// This file styles featured events
+
+// Component Frame
+// =============================================================================
+
+.c-featured-event {
+	width: 300px;
+	padding: $gutter-xs;
+	border-radius: 3px;
+	background-color: $gray;
+	color: $purple;
+
+	.-dark-mode & {
+		background-color: $light;
+		color: $dark;
+	}
+}
+
+// Component Modifiers
+// =============================================================================
+
+// .c-component--wide {
+// }
+
+// .c-component--narrow {
+// }
+
+// Component Elements
+// =============================================================================
+
+.c-featured-event__image {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	text-decoration: none;
+
+	img {
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: 50%;
+		max-width: calc(50% - #{$gutter-xs / 2});
+		display: block;
+	}
+}
+
+.c-featured-event__caption {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 50%;
+	max-width: calc(50% - #{$gutter-xs / 2});
+}
+
+.c-featured-event__title {
+	margin-bottom: 15px;
+	font-size: rem(12px);
+	font-weight: $font-bold;
+
+	// at or above 900px
+	@include media(">=medium") {
+		font-size: rem(14px);
+	}
+}
+
+.c-featured-event__list {
+	font-size: rem(10px);
+	font-weight: $font-semibold;
+
+	// at or above 900px
+	@include media(">=medium") {
+		font-size: rem(11px);
+	}
+}

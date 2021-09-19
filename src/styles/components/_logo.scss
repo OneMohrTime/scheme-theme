@@ -11,7 +11,7 @@
 	height: 108px;
 	margin-left: auto;
 	margin-right: auto;
-	transform: rotate(45deg);
+	// transform: rotate(45deg);
 	border: 1px $teal solid;
 	animation: glowing 2s infinite;
 }
@@ -22,8 +22,19 @@
 // Component Elements
 // =============================================================================
 
+.custom-logo {
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+
 .custom-logo-link {
 	display: block;
+	width: auto;
+	height: auto;
+	max-width: 120px;
+	max-height: 120px;
+	transform: rotate(45deg);
 
 	& > img {
 		display: block;

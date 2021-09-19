@@ -18,24 +18,21 @@
 </main>
 
 <footer id="footer" class="o-footer" role="contentinfo">
-	<div class="site__footer--left">
+	<figure class="o-footer__logo">
+		<?php highstarter_the_custom_logo(); ?>
+	</figure>
+	<div class="o-footer__hours">
 		<h5>Hours</h5>
 		<?php the_field('hours', 'option'); ?>
 	</div>
-	<div class="site__footer--right">
+	<div class="o-footer__subscribe">
 		<h5>Email Signup</h5>
 		<?php the_field('footer_email', 'option'); ?>
 	</div>
-	<div class="container">
-		<div class="row mb-5">
-			<?php
-				get_template_part( 'template-parts/footer/footer', 'widgets' );
-
-				get_template_part( 'template-parts/footer/site', 'info' );
-			?>
-		</div>
-	</div>
+	<?php // get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+	<?php get_template_part( 'template-parts/footer/site', 'info' ); ?>
 </footer>
+
 <?php wp_footer(); ?>
 
 </body>

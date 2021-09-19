@@ -25,7 +25,7 @@
 	<!-- Webfonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 	<?php wp_head();?>
 </head>
@@ -43,7 +43,8 @@
 				<a class="c-skip-link" href="#footer"><?php _e( 'Skip to footer', 'highstarter'); ?></a>
 			</div>
 
-			<button class="c-button -toggle" id="menu_toggle" type="button">
+			<button class="o-header__hamburger c-button -toggle" id="menu_toggle" type="button">
+				<span class="menu-label">Menu</span>
 				<span class="menu-grid open"></span>
 			</button>
 

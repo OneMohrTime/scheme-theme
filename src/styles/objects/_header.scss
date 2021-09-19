@@ -7,10 +7,63 @@
 // =============================================================================
 
 .o-header {
-	position: relative;
-	padding-left: $gutter-xs;
-	padding-right: $gutter-xs;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	width: 100%;
+	margin-bottom: $gutter-xs;
+	z-index: 100;
+
+	// at or above 600px
+	@include media(">=small") {
+		position: relative;
+		bottom: auto;
+		padding-left: $gutter-xs;
+		padding-right: $gutter-xs;
+	}
+
+	// at or above 1200px
+	@include media(">=large") {
+		padding-left: $gutter-lg;
+		padding-right: $gutter-lg;
+	}
 }
 
 // Content
 // =============================================================================
+
+////////////////////////
+.o-header { // container
+////////////////////////
+
+	// logo
+	.-branding {
+		display: none;
+	}
+
+	// at or above 600px
+	@include media(">=small") {
+		// logo
+		.-branding {
+			display: block;
+		}
+	}
+}
+
+.o-header__hamburger {
+	margin-left: auto;
+	margin-right: auto;
+
+	// at or above 600px
+	@include media(">=small") {
+		display: none;
+	}
+}
+
+.c-skip-link,
+.c-skip-nav {
+	@include u-hidden;
+}
+
+// mobile toggle button

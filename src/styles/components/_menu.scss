@@ -1,34 +1,28 @@
 // =============================================================================
-// Components: Navigation
+// Components: Menu
 // =============================================================================
-// This file styles the main primary navigation
+// This file styles different menus around the site
 
 // Component Frame
 // =============================================================================
 
-.c-navigation {
-	display: none;
-
-	// at or above 600px
-	@include media(">=small") {
-		display: flex;
-	}
+.c-menu {
+	display: flex;
 }
 
 // Component Modifiers
 // =============================================================================
 
-// .c-navigation--wide {
-// }
-
-// .c-navigation--narrow {
-// }
+.c-menu.-featured-pages {
+	flex-wrap: wrap;
+}
 
 // Component Elements
 // =============================================================================
 
-// .c-navigation__headline {
-// }
+.menu-item {
 
-// .c-navigation__body {
-// }
+	.c-menu.-featured-pages & {
+		width: 300px;
+	}
+}

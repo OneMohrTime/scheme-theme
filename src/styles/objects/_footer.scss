@@ -8,9 +8,54 @@
 
 .o-footer {
 	position: relative;
+	margin-bottom: 100px;
 	padding-left: $gutter-xs;
 	padding-right: $gutter-xs;
 }
 
 // Content
 // =============================================================================
+
+.o-footer__logo {
+	display: flex;
+	justify-content: center;
+	margin: 60px auto;
+}
+
+.o-footer__hours {
+	margin-bottom: 44px;
+	font-weight: $font-medium;
+
+	// headline
+	h5 {
+		margin-bottom: 5px;
+		font-size: rem($font-size);
+		font-weight: $font-ultra;
+	}
+
+	ul {
+		font-size: rem($font-h5);
+	}
+}
+
+.o-footer__subscribe {
+	margin-bottom: 44px;
+	font-size: rem(11px);
+	font-weight: $font-semibold;
+
+	// headline
+	h5 {
+		margin-bottom: 5px;
+		font-size: rem($font-size);
+		font-weight: $font-ultra;
+	}
+}
+
+.o-footer__copyright {
+	font-size: rem(11px);
+	font-weight: $font-semibold;
+
+	.privacy-policy-link {
+		@include u-inline-link();
+	}
+}
