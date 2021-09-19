@@ -1,0 +1,88 @@
+// =============================================================================
+// Components: Tribe Events Calendar
+// =============================================================================
+// This file is for overrides to .tribe-event[*} elements
+
+.tribe-events .tribe-events-l-container {
+	padding: $gutter-sm $gutter-xs;
+	max-width: 100%;
+}
+
+.tribe-events .tribe-events-header {
+	padding-bottom: $gutter-sm;
+}
+
+.tribe-events .tribe-events-c-top-bar__datepicker-button {
+	font-size: rem($font-size);
+	padding: 18px 24px 16px;
+}
+
+.tribe-events .tribe-events-c-events-bar__search-container {
+	width: calc(100% - #{$gutter-sm});
+	margin-left: auto;
+	margin-right: auto;
+	padding: 8px;
+	background-color: $light;
+}
+.tribe-events .tribe-events-c-events-bar__search-form {
+	display: flex;
+}
+.tribe-events .tribe-events-c-events-bar__search-button {
+	padding: 18px 24px 16px;
+}
+
+.tribe-events .tribe-events-c-view-selector {
+	width: auto;
+}
+.tribe-events .tribe-events-c-view-selector__button {
+	padding: 18px 24px 16px;
+}
+
+.tribe-events .tribe-events-c-search__input-group {
+	width: 100%;
+}
+.tribe-events .tribe-events-c-search__button {
+	width: auto;
+	margin: 0;
+	white-space: nowrap;
+	border-radius: 3px;
+	background-color: $dark;
+	color: $light;
+}
+
+.tribe-events .tribe-events-c-view-selector__content {
+	padding: 0;
+	background-color: $light;
+	color: $purple;
+}
+
+.tribe-events .tribe-events-c-view-selector__list-item-link {
+	padding: 8px 32px;
+	transition: background-color $speed-hover $bezier-slide,
+				color $speed-hover $bezier-slide;
+	text-decoration: none;
+
+	@include u-hocus {
+		background-color: $dark;
+		color: $light;
+	}
+}
+.tribe-events .tribe-events-c-view-selector__list-item-text {
+	font-size: rem($font-h6);
+	font-weight: $font-bold;
+	text-transform: uppercase;
+	line-height: $heading-height;
+	letter-spacing: rem(3px);
+}
+.tribe-events .tribe-events-c-view-selector__list-item-icon {
+	margin-bottom: 10px;
+}
+
+.datepicker.dropdown-menu {
+	background-color: $light;
+	color: $dark;
+}
+.datepicker table tr td.active.active {
+	background-color: $blue;
+	background-image: none;
+}
