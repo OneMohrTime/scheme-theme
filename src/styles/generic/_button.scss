@@ -15,24 +15,24 @@
 
 button,
 .c-button {
-    display: inline-block; /* [1] */
-    margin: 0; /* [3] */
-    padding: 0;
-    overflow: visible; /* [2] */
-    font: inherit; /* [5] */
-    text-align: center; /* [3] */
-    text-decoration: none;
-    text-transform: none;
-    line-height: normal;
-    vertical-align: middle; /* [4] */
-    border: 0;
-    background: none transparent;
-    color: inherit;
-    cursor: pointer; /* [6] */
-    user-select: none;
+	display: inline-block; /* [1] */
+	margin: 0; /* [3] */
+	padding: 0;
+	overflow: visible; /* [2] */
+	font: inherit; /* [5] */
+	text-align: center; /* [3] */
+	text-decoration: none;
+	text-transform: none;
+	line-height: normal;
+	vertical-align: middle; /* [4] */
+	border: 0;
+	background: none transparent;
+	color: inherit;
+	cursor: pointer; /* [6] */
+	user-select: none;
 
-    // Generate hover and focus states
-    @include u-hocus {
-        text-decoration: none;
-    }
+	// Generate hover and focus states
+	@include u-hocus {
+		text-decoration: none;
+	}
 }

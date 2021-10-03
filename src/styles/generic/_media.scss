@@ -18,30 +18,30 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle; /* [1] */
+	vertical-align: middle; /* [1] */
 }
 
 // Add the correct display in iOS 4-7.
 audio:not([controls]) {
-    display: none;
-    height: 0;
+	display: none;
+	height: 0;
 }
 
 img,
 svg {
-    max-width: 100%; /* [2] */
-    height: auto;
+	max-width: 100%; /* [2] */
+	height: auto;
 
-    &[width],
-    &[height] {
-        max-width: none; /* [3] */
-    }
+	&[width],
+	&[height] {
+		max-width: none; /* [3] */
+	}
 }
 
 img {
-    font-style: italic; /* [4] */
+	font-style: italic; /* [4] */
 }
 
 svg {
-    fill: currentColor; /* [5] */
+	fill: currentColor; /* [5] */
 }

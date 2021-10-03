@@ -19,6 +19,7 @@
 	@include media(">=small") {
 		position: relative;
 		bottom: auto;
+		align-items: center;
 		padding-left: $gutter-xs;
 		padding-right: $gutter-xs;
 	}

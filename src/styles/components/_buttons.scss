@@ -8,6 +8,8 @@
 
 .c-button {
 	padding: 18px 24px 16px;
+	transition: background-color $speed-hover $bezier-slide,
+				color $speed-hover $bezier-slide;
 	font-size: rem($font-h6);
 	font-weight: $font-semibold;
 	line-height: 1em;
@@ -106,24 +108,49 @@
 }
 
 .c-button.-default {
+	border: 2px $dark solid;
 	background-color: $dark;
 	color: $light;
 
+	@include u-hocus {
+		background-color: transparent;
+		color: $dark;
+	}
+
 	.-dark-mode & {
+		border-color: $teal;
 		background-color: $teal;
 		color: $dark;
 		animation: u-teal-shadow 2s infinite;
+
+		@include u-hocus {
+			background-color: transparent;
+			color: $light-teal;
+		}
 	}
 }
 
 .c-button.-primary {
+	border: 2px $blue solid;
 	background-color: $blue;
 	color: $light;
 
+	@include u-hocus {
+		border-color: $dark;
+		background-color: transparent;
+		color: $dark;
+	}
+
 	.-dark-mode & {
+		border-color: $pink;
 		background-color: $pink;
 		color: $light-pink;
 		animation: u-pink-shadow 2s infinite;
+
+		@include u-hocus {
+			background-color: transparent;
+			color: $light-pink;
+		}
 	}
 }
 

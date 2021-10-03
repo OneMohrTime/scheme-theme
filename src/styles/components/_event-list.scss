@@ -112,11 +112,12 @@
 }
 
 .c-event__headline {
-	padding: 18px 20px !important;
+	@include ellipsis;
 	flex-grow: 0;
 	flex-shrink: 0;
 	flex-basis: 100%;
 	max-width: 100%;
+	padding: 18px 20px !important;
 	font-size: rem($font-h5);
 	border-bottom-width: 1px !important;
 	border-color: $gray !important;
@@ -247,7 +248,8 @@ dt {
 		// dark mode
 		.-dark-mode & {
 			box-shadow: 0 0 0 2px $dark,
-						0 0 0 4px $blue;
+						0 0 0 4px $teal;
+			// animation: u-teal-shadow 2s infinite;
 		}
 	}
 }

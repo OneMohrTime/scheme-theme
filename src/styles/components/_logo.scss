@@ -14,6 +14,12 @@
 	// transform: rotate(45deg);
 	border: 1px $teal solid;
 	animation: glowing 2s infinite;
+
+	// at or above 600px
+	@include media(">=small") {
+		margin: 0;
+		transform: rotate(45deg);
+	}
 }
 
 // Component Modifiers
@@ -40,5 +46,10 @@
 		display: block;
 		max-width: 100%;
 		max-height: 100%;
+	}
+
+	// at or above 600px
+	@include media(">=small") {
+		transform: rotate(0);
 	}
 }

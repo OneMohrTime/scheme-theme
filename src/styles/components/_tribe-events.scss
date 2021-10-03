@@ -78,6 +78,35 @@
 	margin-bottom: 10px;
 }
 
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-search {
+	align-items: stretch;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-view-selector--tabs .tribe-events-c-view-selector__content {
+	padding: 0;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-search__input-control {
+	margin-right: 12px;
+	border: 1px $black solid;
+	border-radius: 3px;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-view-selector--tabs .tribe-events-c-view-selector__list-item {
+	padding: 0;
+	margin-left: 12px;
+}
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-view-selector--tabs .tribe-events-c-view-selector__list-item-link {
+	padding: 0 12px;
+	border-radius: 3px;
+}
+
+.tribe-common .tribe-common-c-btn,
+.tribe-common a.tribe-common-c-btn {
+	font-size: rem($font-size);
+	padding: 18px 24px 16px;
+}
+
 .datepicker.dropdown-menu {
 	background-color: $light;
 	color: $dark;

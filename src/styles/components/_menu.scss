@@ -21,8 +21,18 @@
 // =============================================================================
 
 .menu-item {
+	margin-left: 30px;
+
+	// home link
+	&-home {
+		display: none;
+	}
 
 	.c-menu.-featured-pages & {
 		width: 300px;
 	}
+}
+
+.sub-menu {
+	display: none;
 }
