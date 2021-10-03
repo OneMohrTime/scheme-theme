@@ -31,9 +31,9 @@
 		class="tribe-common-h3 tribe-common-h--alt tribe-events-c-top-bar__datepicker-button c-button -primary"
 		data-js="tribe-events-top-bar-datepicker-button"
 		type="button"
+
 		aria-label="<?php esc_attr_e( 'Click to toggle datepicker', 'the-events-calendar' ); ?>"
-		title="<?php esc_attr_e( 'Click to toggle datepicker', 'the-events-calendar' ); ?>"
-	>
+		title="<?php esc_attr_e( 'Click to toggle datepicker', 'the-events-calendar' ); ?>">
 		<time
 			datetime="<?php echo esc_attr( $selected_start_datetime ); ?>"
 			class="tribe-events-c-top-bar__datepicker-time"

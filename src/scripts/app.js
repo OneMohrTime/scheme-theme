@@ -24,7 +24,7 @@ const app = new modular({
 // start up our app!
 
 window.onload = (event) => {
-  const $style = document.getElementById("stylesheet");
+  const $style = document.getElementById('stylesheet');
 
   if ($style) {
     init();
@@ -34,7 +34,6 @@ window.onload = (event) => {
     });
   }
 };
-
 
 function init() {
   // Delay site init

@@ -31,50 +31,61 @@ get_header(); ?>
 
 		<h2 class="-is-hidden">Featured Events</h2>
 
-		<?php
-		// Ensure the global $post variable is in scope
-		global $post;
+		<div class="swiper" data-module-swiper>
+			<div class="swiper-wrapper">
 
-		// Grab today's date
-		$today = date('Y-m-d H');
+			<?php
+			// Ensure the global $post variable is in scope
+			global $post;
 
-		// Retrieve the next 25 upcoming events
-		$events = tribe_get_events( [
-			'posts_per_page' => 4,
-			'start_date'     => $today,
-			'featured'       => true
-		] );
+			// Grab today's date
+			$today = date('Y-m-d H');
 
-		// Loop through the events: set up each one as
-		// the current post then use template tags to
-		// display the title and content
-		foreach ( $events as $post ) {
-			setup_postdata( $post );
+			// Retrieve the next 25 upcoming events
+			$events = tribe_get_events( [
+				'posts_per_page' => 4,
+				'start_date'     => $today,
+				'featured'       => true
+			] );
 
-			// This time, let's throw in an event-specific
-			// template tag to show the date after the title!
-			echo '<figure class="c-featured-event -' . $post->post_type . '">';
-			echo '<a href="' . get_post_permalink() . '" class="c-featured-event__image" tabindex="-1">';
-			// Event Poster
-			echo the_post_thumbnail();
-			echo '<figcaption class="c-featured-event__caption">';
-			echo '<h3 class="c-featured-event__title">' . $post->post_title . '</h3>';
-			echo '<ul class="c-featured-event__list">';
-			// Event Cost
-			echo '<li class="c-featured-event__list--item cost">Costs <span>' . tribe_get_formatted_cost() . '</span></li>';
-			// Event Time
-			echo '<li class="c-featured-event__list--item time">Doors @ <span>' . tribe_get_start_time() . '</span></li>';
-			// Event Tickets Link
-			// echo '<li class="featured-event__list--item time"><span><a href="' . get_field('ticketweb_event') . '" target="_blank">Tickets</a></span></li>';
-			echo '</ul>';
-			echo '</figcaption>';
-			// echo ' ' . tribe_get_start_date( $post ) . ' ';
-			echo '</a>';
-			echo '</figure>';
-		}
+			// Loop through the events: set up each one as
+			// the current post then use template tags to
+			// display the title and content
+			foreach ( $events as $post ) {
+				setup_postdata( $post );
 
-		// Reset global post variable. After this point, we are back to the Main Query object
-		wp_reset_postdata(); ?>
+				// This time, let's throw in an event-specific
+				// template tag to show the date after the title!
+				echo '<figure class="c-featured-event -' . $post->post_type . ' swiper-slide">';
+				echo '<a href="' . get_post_permalink() . '" class="c-featured-event__image" tabindex="-1">';
+				// Event Poster
+				echo the_post_thumbnail();
+				echo '<figcaption class="c-featured-event__caption">';
+				echo '<h3 class="c-featured-event__title">' . $post->post_title . '</h3>';
+				echo '<ul class="c-featured-event__list">';
+				// Event Cost
+				echo '<li class="c-featured-event__list--item cost">Costs <span>' . tribe_get_formatted_cost() . '</span></li>';
+				// Event Time
+				echo '<li class="c-featured-event__list--item time">Doors @ <span>' . tribe_get_start_time() . '</span></li>';
+				// Event Tickets Link
+				// echo '<li class="featured-event__list--item time"><span><a href="' . get_field('ticketweb_event') . '" target="_blank">Tickets</a></span></li>';
+				echo '</ul>';
+				echo '</figcaption>';
+				// echo ' ' . tribe_get_start_date( $post ) . ' ';
+				echo '</a>';
+				echo '</figure>';
+			}
+
+			// Reset global post variable. After this point, we are back to the Main Query object
+			wp_reset_postdata(); ?>
+
+			</div>
+		</div>
+
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
 
 		<span class="c-featured__label">Swipe for more events</span>
 

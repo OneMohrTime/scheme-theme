@@ -53,7 +53,7 @@ and share what you've learned with others.
 
 // Generic
 // =============================================================================
-@import "node_modules/normalize.css/normalize";
+@import "../../node_modules/normalize.css/normalize";
 @import "generic/generic";
 @import "generic/media";
 @import "generic/form";
@@ -67,6 +67,10 @@ and share what you've learned with others.
 
 // Vendors
 // =============================================================================
+@import "../../node_modules/swiper/swiper-vars";
+@import "../../node_modules/swiper/swiper";
+@import "../../node_modules/swiper/modules/navigation/navigation";
+@import "../../node_modules/swiper/modules/pagination/pagination";
 // @import "vendors/example";
 
 // Objects
@@ -74,7 +78,7 @@ and share what you've learned with others.
 @import "objects/container";
 @import "objects/footer";
 @import "objects/header";
-@import "objects/page-transitions";
+// @import "objects/page-transitions";
 @import "objects/ratio";
 @import "objects/scroll-elements";
 

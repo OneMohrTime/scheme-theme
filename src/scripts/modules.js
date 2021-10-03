@@ -6,4 +6,4 @@
 
 // Modules exports
 // =============================================================================
-// export {default as Example} from './modules/Example';
+export {default as Swiper} from './modules/Swiper';
