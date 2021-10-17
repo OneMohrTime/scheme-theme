@@ -34,14 +34,11 @@
 <?php wp_body_open(); ?>
 	<div id="container" class="o-container -<?php if (is_single()): ?>single<?php else : ?>default<?php endif; ?>">
 
+		<?php get_template_part('template-parts/components/todays-events');?>
+
 		<header id="header" class="o-header">
 
-			<a class="c-skip-link" href="#a11y"><?php _e( 'Open Skip Nav', 'highstarter'); ?></a>
-
-			<div class="c-skip-nav" id="a11y">
-				<a class="c-skip-link" href="#content"><?php _e( 'Skip to content', 'highstarter'); ?></a>
-				<a class="c-skip-link" href="#footer"><?php _e( 'Skip to footer', 'highstarter'); ?></a>
-			</div>
+			<?php get_template_part('template-parts/components/skip-links');?>
 
 			<button class="o-header__hamburger c-button -toggle" id="menu_toggle" type="button">
 				<span class="menu-label">Menu</span>
