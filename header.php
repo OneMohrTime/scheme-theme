@@ -54,6 +54,16 @@
 
 			<?php get_template_part('template-parts/header/navigation');?>
 			<?php //get_template_part('template-parts/header/site-branding');?>
+
+			<?php
+			$isDarkMode = get_theme_mod('enable_dark_mode', 1);
+			if ($isDarkMode) : ?>
+			<button class="wpnm-button">
+				Mode
+				<div class="wpnm-button-inner-left"></div>
+				<div class="wpnm-button-inner"></div>
+			</button>
+			<?php endif; ?>
 		</header>
 
 		<main class="o-main">
